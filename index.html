@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>LLM-CMTS - SSTD 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LLMs Meet Cross-Modal Time Series Analytics: Overview and Directions">
+    <meta name="author" content="SSTD 2025 Tutorial Team">
+    <link rel="stylesheet" href="SSTD2025/assets/css/main.css">
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <style>
+        .page-header {
+            background: rgba(255, 255, 255, 0.3) url('SSTD2025/assets/images/sydney.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 1.5rem;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.1));
+            margin: 1.8rem 0;
+            border-radius: 4px;
+        }
+        
+        h2 {
+            border-left: 4px solid #3498db;
+            padding-left: 12px;
+            margin-top: 1.8rem;
+            color: #2c3e50;
+            font-size: 1.6rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .tutorial-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .tutorial-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: rgba(52, 152, 219, 0.2);
+        }
+        
+        .tutorial-section strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0 1.5rem;
+            flex-wrap: wrap;
+            background: rgba(248, 249, 250, 0.8);
+            padding: 0.6rem;
+            border-radius: 50px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+        
+        .nav-menu a {
+            padding: 0.6rem 1.2rem;
+            margin: 0 0.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #3498db;
+            color: white;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.08);
+            border-left: 4px solid #3498db;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <button><div class="navicon"></div></button>
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item masthead__menu-item--lg">
+                            <a href="#">LLM-CMTS</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <div class="page__inner-wrap">
+            <section class="page__content" itemprop="text">
+                <center>
+                    <p style="margin-bottom: 10px; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">SSTD 2025 Tutorial</p>
+                    <h1 style="font-size: 2.2rem; max-width: 900px; margin: 0 auto 1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">LLMs Meet Cross-Modal Time Series
+                        Analytics: Overview and Directions</h1>
+                    <div style="margin: 20px 0; background: rgba(255,255,255,0.4); display: inline-block; padding: 1rem 2rem; border-radius: 8px;">
+                        <p><strong>Date:</strong> Day 2 - August 26, 2025</p>
+                        <p><strong>Time:</strong> 11:00 - 12:25</p>
+                        <p><strong>Tutorial:</strong> 3</p>
+                    </div>
+                </center>
+            </section>
+        </div>
+    </div>
+
+    <div class="nav-menu">
+        <a href="#abstract">Introduction</a>
+        <a href="#audience">Audience</a>
+        <a href="#outline">Outline</a>
+        <a href="#presenters">Presenters</a>
+        <a href="#webchair">Web Chair</a>
+    </div>
+
+    <div id="main" role="main">
+        <div class="page__inner-wrap">
+            <section class="page__content" itemprop="text">
+                <h2 id="abstract">Introduction</h2>
+                <p style="margin: 0.8rem 0; line-height: 1.5; color: #2c3e50;text-align: justify;">Large Language Models (LLMs) have emerged as a promising paradigm for time series analytics, leveraging their massive parameters and the shared sequential nature of textual and time series data. However, a cross-modality gap exists between time series and textual data, as LLMs are pre-trained on textual corpora and are not inherently optimized for time series. In this tutorial, we provide an up-to-date overview of LLM-based cross-modal time series analytics. We introduce a taxonomy that classifies existing approaches into three groups based on cross-modal modeling strategies, e.g., conversion, alignment, and fusion, and then discuss their applications across a range of downstream tasks. In addition, we summarize several open challenges. This tutorial aims to expand the practical application of LLMs in solving real-world problems in cross-modal time series analytics while balancing effectiveness and efficiency. Participants will gain a thorough understanding of current advancements, methodologies, and future research directions in cross-modal time series analytics.</p>
+
+                <div class="framework-section">
+                    <img src="SSTD2025/assets/images/framework.jpg" alt="Framework Overview" style="max-width: 70%; height: auto; margin: 15px 0;">
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2 id="audience">Intended Audience</h2>
+                <p style="margin-bottom: 0.8rem;text-align: justify;">This tutorial is designed for a broad audience of researchers who are interested in time series analytics, LLMs, and multimodal learning.</p>
+                <p style="text-align: justify;">We assume participants have a basic understanding of machine learning and sequential data modeling, making the content accessible to professionals and students alike. Attendees will gain a comprehensive understanding of the methodologies and challenges in cross-modal time series analytics. They will also become familiar with emerging applications across domains, and will learn how to integrate textual knowledge into time series tasks using LLMs.</p>
+
+                <div class="section-divider"></div>
+
+                <h2 id="outline">Tutorial Outline</h2>
+                <table style="width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.5;">
+                    <tr>
+                        <th style="padding: 0.5rem; border-bottom: 2px solid #ddd; text-align: left;">Time</th>
+                        <th style="padding: 0.5rem; border-bottom: 2px solid #ddd; text-align: left;">Session</th>
+                        <th style="padding: 0.5rem; border-bottom: 2px solid #ddd; text-align: left;">Presenter</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">11:00-11:15</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Welcome & Introduction</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Panos Kalnis</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">11:15-11:30</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">LLMs for TS Anomalies</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Hao Miao</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">11:30-11:45</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Spatio-Temporal LLMs</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Ziyue Li</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">11:45-12:10</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Cross-Modal Modeling</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid #ddd;">Chenxi Liu</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">12:10-12:25</td>
+                        <td style="padding: 0.5rem;">Future Directions, Q&A</td>
+                        <td style="padding: 0.5rem;">All</td>
+                    </tr>
+                </table>
+
+                <div class="section-divider"></div>
+
+                <h2 id="presenters">Presenters</h2>
+                <div class="authors-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5em; margin-top: 1.5em;">
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/lcx.jpg" alt="Chenxi Liu" class="author-avatar">
+                            <h3>Chenxi Liu</h3>
+                            <p>Nanyang Technological University</p>
+                            <div class="author-links">
+                                <a href="https://chenxiliu-hnu.github.io/homepage/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/hm.jpg" alt="Hao Miao" class="author-avatar">
+                            <h3>Hao Miao</h3>
+                            <p>The Hong Kong Polytechnic University</p>
+                            <div class="author-links">
+                                <a href="https://haomiao.website/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/cl.jpg" alt="Cheng Long" class="author-avatar">
+                            <h3>Cheng Long</h3>
+                            <p>Nanyang Technological University</p>
+                            <div class="author-links">
+                                <a href="https://personal.ntu.edu.sg/c.long/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/yz.jpg" alt="Yan Zhao" class="author-avatar">
+                            <h3>Yan Zhao</h3>
+                            <p>University of Electronic Science and Technology of China</p>
+                            <div class="author-links">
+                                <a href="https://yan20191113.github.io/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/zyl.jpg" alt="Ziyue Li" class="author-avatar">
+                            <h3>Ziyue Li</h3>
+                            <p>Technical University of Munich</p>
+                            <div class="author-links">
+                                <a href="https://bonaldli.github.io/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-info">
+                        <div class="author-details">
+                            <img src="SSTD2025/assets/images/pk.jpeg" alt="Panos Kalnis" class="author-avatar">
+                            <h3>Panos Kalnis</h3>
+                            <p>King Abdullah University of Science and Technology</p>
+                            <div class="author-links">
+                                <a href="https://www.kalnis.org/" target="_blank"><i class="fas fa-globe"></i> Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2 id="webchair">Web Chair</h2>
+                <p style="margin-bottom: 0.8rem;">Jinghan Zhang, Zhengzhou university, China</p>
+
+<script>
+    window.onload = function() {
+        var video = document.getElementById("tutorial-video");
+        video.currentTime = 0; // Set video to start from 1 second
+    };
+</script>
+            </section>
+        </div>
+    </div>
+
+    <div class="page__footer">
+        <footer>
+            <div class="page__footer-copyright">&copy; 2025 SSTD Tutorial Team</div>
+        </footer>
+    </div>
+</body>
+</html>
